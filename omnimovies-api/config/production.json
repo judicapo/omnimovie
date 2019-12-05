@@ -1,15 +1,16 @@
 {
-  "host": "omnimovies-api.feathersjs.com",
+  "host": "omnimovies.com",
   "port": "PORT",
   "public": "../public/",
   "paginate": {
     "default": 10,
     "max": 50
   },
+  "mysql": "MYSQLCONNSTR_localdb",
   "authentication": {
-    "entity": "user",
+    "entity": "users",
     "service": "users",
-    "secret": "BA2tpFwePMUTr6K0jbZIGnx/nCk=",
+    "secret": "APP_SETTINGS_SECRET_TOKEN",
     "authStrategies": [
       "jwt",
       "local"
@@ -18,7 +19,7 @@
       "header": {
         "typ": "access"
       },
-      "audience": "https://yourdomain.com",
+      "audience": "https://omnimovies.com",
       "issuer": "feathers",
       "algorithm": "HS256",
       "expiresIn": "1d"
@@ -27,6 +28,5 @@
       "usernameField": "email",
       "passwordField": "password"
     }
-  },
-  "sqlite": "sqlite://omnimovies_api.sqlite"
+  }
 }
