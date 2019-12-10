@@ -46,6 +46,8 @@ export default {
         this.data = await axios.get(
           `https://api.themoviedb.org/3/discover/movie?${query}`
         );
+        this.page = params.page;
+        
         return this.data;
       } catch (error) {
         throw error;

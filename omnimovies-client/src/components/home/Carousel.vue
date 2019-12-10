@@ -9,10 +9,17 @@
       </p>
       <b-carousel icon-pack="fas">
         <b-carousel-item v-for="(item, i) in data" :key="i">
-          <div class="container">
-            <img class="image" :src="getImgUrl(item.poster_path)" />
-            <img class="image-small" :src="getImgUrl(item.poster_path)" />
-            <div class="centered">
+          <div
+            class="columns container"
+            v-bind:style="{
+              backgroundImage: `url(${getImgUrl(item.poster_path)})`
+            }"
+          >
+            <img
+              class="column is-2 is-offset-2"
+              :src="getImgUrl(item.poster_path)"
+            />
+            <div class="shadow column is-5 is-offset-1">
               <h1 class="title">{{ item.original_title }}</h1>
               <h2>{{ item.overview }}</h2>
             </div>
@@ -73,29 +80,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-  position: relative;
-  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3em;
+  padding-top: 3em;
+}
+
+.shadow {
   color: white;
-  max-height: 35em;
-}
-
-.image {
-  width: 100%;
-}
-
-.image-small {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 60%;
+  max-height: 16em;
   background-color: rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%);
 }
 </style>
