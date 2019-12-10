@@ -10,8 +10,8 @@
       <b-carousel icon-pack="fas">
         <b-carousel-item v-for="(item, i) in data" :key="i">
           <div class="container">
-            <img class="image" :src="getImgUrl(item.poster_path)"/>
-            <img class="image-small" :src="getImgUrl(item.poster_path)"/>
+            <img class="image" :src="getImgUrl(item.poster_path)" />
+            <img class="image-small" :src="getImgUrl(item.poster_path)" />
             <div class="centered">
               <h1 class="title">{{ item.original_title }}</h1>
               <h2>{{ item.overview }}</h2>
@@ -48,7 +48,6 @@ export default {
           "/"
         );
         this.data.push(data.results[i]);
-        console.log(data.results[i]);
       }
     },
     getImgUrl(value) {
@@ -77,14 +76,14 @@ export default {
   position: relative;
   text-align: center;
   color: white;
-  max-height: 35em
+  max-height: 35em;
 }
 
 .image {
   width: 100%;
 }
 
-.image-small{
+.image-small {
   position: absolute;
   top: 50%;
   left: 20%;
